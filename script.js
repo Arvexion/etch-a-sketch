@@ -1,3 +1,5 @@
+const gridColors = ['black', 'white', 'red', 'blue', 'yellow', 'green']
+
 const gridSize = document.querySelector('.grid-size')
 
 gridSize.addEventListener('click', () => {
@@ -28,7 +30,10 @@ function createSquareGrid(size) {
     
     container.addEventListener('mouseover', (e) => {
         if (e.target.classList.contains('grid-item')) {
-            e.target.style.backgroundColor = 'black';
+            const randomIndex = Math.floor(Math.random() * gridColors.length);
+            const randomGridColor = gridColors[randomIndex]
+
+            e.target.style.backgroundColor = randomGridColor;
         }
     });
 
