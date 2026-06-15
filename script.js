@@ -1,5 +1,15 @@
-const GRID_SIZE = 16
-createSquareGrid(GRID_SIZE);
+const gridSize = document.querySelector('.grid-size')
+
+gridSize.addEventListener('click', () => {
+    let userInput = prompt('Preferred Size:', 16)
+
+    while (userInput === null || userInput.trim() === '' || isNaN(userInput) || Number(userInput) <= 0 || Number(userInput) > 100) {
+        alert('Invalid Input!')
+        userInput = prompt('Preferred Size:', 16)
+    }
+
+    createSquareGrid(Number(userInput));
+});
 
 function createSquareGrid(size) {
     const container = document.querySelector('.grid-container'); 
