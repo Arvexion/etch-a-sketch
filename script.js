@@ -30,10 +30,16 @@ function createSquareGrid(size) {
     
     container.addEventListener('mouseover', (e) => {
         if (e.target.classList.contains('grid-item')) {
+            let currentOpacity = Number(e.target.dataset.opacity) || 0;
+            if (currentOpacity < 100) {
+                currentOpacity += 10;
+                e.target.dataset.opacity = currentOpacity;
+            } 
+    
             const randomIndex = Math.floor(Math.random() * gridColors.length);
             const randomGridColor = gridColors[randomIndex]
 
-            e.target.style.backgroundColor = randomGridColor;
+            e.target.style.backgroundColor = `color-mix(in srgb, ${randomGridColor}, black ${currentOpacity}%)`;
         }
     });
 
