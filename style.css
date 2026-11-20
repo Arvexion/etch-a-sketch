@@ -9,6 +9,7 @@ body {
     background-color: lightblue;
 }
 
+/* Styling for containers*/ 
 .grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -20,6 +21,7 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0,0.1);
 }
 
+/* Styling for items   */
 .grid-item {
     background-color: #cacdcf;
     box-sizing: border-box;
